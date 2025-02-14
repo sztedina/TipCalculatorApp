@@ -1,8 +1,4 @@
 const calcForm = document.querySelector("form")
-/* const billInput = document.getElementById("price") */
-/* const billLabel = document.getElementById("bill-label") */
-/* const numberInputDiv = document.getElementById("price-div") */
-/* const tipInput = document.querySelector("input[type='radio']:checked") */
 const peopleContainer = document.getElementById("people-container")
 const peopleDiv = document.getElementById("people-div")
 const peopleInput = document.getElementById("people")
@@ -33,7 +29,7 @@ calcForm.addEventListener("input", (e) => {
             
     }  else {
         peopleInput.classList.remove("error")
-  
+
     }
     
     // CALCULATOR

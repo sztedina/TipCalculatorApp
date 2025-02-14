@@ -1,0 +1,336 @@
+/* CSS Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: hsl(186, 14%, 43%);
+    line-height: 1.5;
+    text-align: left;
+    background-color: hsl(185, 41%, 84%);
+    padding: 1em;
+  }
+
+button {
+  line-height: 1.1;
+}
+
+img {
+  width: 100%;
+  display: block;
+  margin: 0;
+}
+
+button, input {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Hide arrows from number input */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Main container */
+
+.container {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px hsl(184, 14%, 56%);
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+/* Form container */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    min-width: 300px;
+}
+/* Number input style */
+
+
+label, .tip-select-label {
+    font-weight: 700;
+}
+
+.tip-select-label {
+    margin-bottom: 0.5em;
+}
+
+input {
+   
+    background-color: hsl(185, 41%, 84%);
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: 700;
+    text-align: right;
+    font-weight: 700;
+    font-size: 1.2rem;
+} 
+
+input::placeholder {
+    position: absolute;
+    right: 3%;
+    color: hsl(184, 14%, 56%);
+    font-weight: 700;
+}
+
+.dollar {
+    background: url("images/icon-dollar.svg");
+    background-color: hsl(189, 41%, 97%);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.man {
+    background: url("images/icon-person.svg");
+    background-color: hsl(189, 41%, 97%);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+input:hover, input:focus {
+    border: 3px solid hsl(172, 67%, 45%);
+    cursor: pointer;
+    
+}
+
+/* Select Tip div */
+
+ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+ul > li {
+    float: left;
+    margin: 0 5px 0 0;
+    width: 100%;
+    height: 40px;
+    position: relative;
+    
+    border-radius: 10px;
+}
+
+ul > li > label,
+ul > li > input {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0%;
+  right: 0;
+  bottom: 0;
+}
+
+ul > li:checked {
+    background-color: hsl(172, 67%, 45%);
+    border-radius: 10px;
+}
+
+
+
+ul > li > label {
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 10px;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    z-index: 90;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul > li > input[type="radio"] {
+    opacity: 0.01;
+    z-index: 100;
+  }
+
+ul > li:last-child > label{
+    background-color: hsl(189, 41%, 97%);
+    border-radius: 10px;
+    color: hsl(183, 100%, 15%);;
+}
+
+ul > li input[type="radio"]:checked+label {
+  background: hsl(172, 67%, 45%);
+}
+
+label {
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.error {
+    border: 3px solid #FF6155;
+    color: red;
+    font-weight: 700;
+    background-color: #f2adb0;
+    opacity: 0.5;
+}
+
+/* Calculator container*/
+
+.calculator {
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 10px;
+    color: white;
+    padding: 2em 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.calc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.amount-label {
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.person-ratio {
+    font-size: 0.7rem;
+    color: hsl(185, 41%, 84%);;
+}
+
+.amount-div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.2em;
+}
+
+.amount-div > img {
+    width: 10px;
+    
+}
+.amount-div > p {
+    font-size: 1.5rem;
+    color: hsl(172, 67%, 45%);
+    font-weight: 700;
+}
+
+button {
+    border: none;
+    background-color: hsl(172, 67%, 45%);
+    border-radius: 5px;
+    padding: 0.5em;
+    color: hsl(183, 100%, 15%);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+button:hover {
+    background-color: hsl(185, 41%, 84%);
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: hsl(189, 41%, 97%);
+    color: hsl(184, 14%, 56%);
+    cursor: auto;
+}
+
+
+#bill-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+
+
+
+
+
+@media (min-width: 60em) {
+    .container {
+        width: 700px;
+        max-width: 70vw;
+        flex-direction: row;
+        gap: 2em;
+    }
+
+    .form-container {
+        width: 50%;
+    }
+
+    .calculator {
+        width: 50%;
+    }
+
+    .number-input-div  {
+        padding: 1em;
+    }
+
+    .number-input-div > img {
+        flex:5%;
+    }
+
+    ul {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
+    }
+
+    .calculator {
+        justify-content: space-evenly;
+    }
+
+    .amount-label {
+        font-size: 1rem;
+    }
+    
+    .person-ratio {
+        font-size: 0.9rem;
+    }
+
+    .amount-div > p {
+        font-size: 2.5rem;
+    }
+    
+}

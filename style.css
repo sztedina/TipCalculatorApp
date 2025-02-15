@@ -201,12 +201,21 @@ label {
     align-items: center;
 }
 
+
+
+.tipcustom::placeholder {
+    color: hsl(172, 67%, 45%);
+    position: absolute;
+    right: 30%;
+}
+
+.comment {
+    color: white;
+}
+
 .error {
     border: 3px solid #FF6155;
-    color: red;
-    font-weight: 700;
-    background-color: #f2adb0;
-    opacity: 0.5;
+   color: red;
 }
 
 /* Calculator container*/

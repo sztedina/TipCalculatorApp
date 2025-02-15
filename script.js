@@ -5,6 +5,8 @@ const peopleInput = document.getElementById("people")
 const totalPrice = document.getElementById("total-price")
 const tipRatio = document.getElementById("tip-ratio")
 const resetBtn = document.getElementById("reset-btn")
+const span = document.querySelector(".comment")
+const customTip = document.getElementById("custom")
 
 let data = {
     bill: 0,
@@ -17,28 +19,41 @@ calcForm.addEventListener("input", (e) => {
     // Get data 
    
     data = Object.fromEntries(new FormData(calcForm));
-    console.log(data)
+   
     //Validation && handling error
+
     
-    if (parseFloat(data.people) <= 0 ) {
+    console.log(data)
+    if (parseFloat(data.people) <= 0 && (!peopleInput.classList.contains("error"))) {
 
-        if (!peopleInput.classList.contains("error")) {
             peopleInput.classList.add("error")
+            span.style.color = "red"
+        
             
-        } 
-            
-    }  else {
+    }
+    if (parseFloat(data.people) > 0) {
         peopleInput.classList.remove("error")
-
+        span.style.color = "white"
+        console.log("Hi")
     }
     
     // CALCULATOR
     
     if (data.bill && data.people) {
-        totalPrice.innerText = calculateTotal(data.bill, data.tip, data.people)
-        tipRatio.innerText = calculateTip(data.bill, data.tip, data.people)
+        if (data.customtip) {
+            console.log("Hi")
+            totalPrice.innerText = calculateTotal(data.bill, data.customtip, data.people)
+            tipRatio.innerText = calculateTip(data.bill, data.customtip, data.people)
+            /* resetBtn.disabled = false */
+        } else {
+            totalPrice.innerText = calculateTotal(data.bill, data.tip, data.people)
+            tipRatio.innerText = calculateTip(data.bill, data.tip, data.people)
+        }
+        
         resetBtn.disabled = false
     }
+
+    
 })
 
 resetBtn.addEventListener("click", clearForm)
